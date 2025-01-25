@@ -2,6 +2,7 @@ package com.leonardoBezerra.dslist.dto;
 
 
 import com.leonardoBezerra.dslist.entities.Game;
+import com.leonardoBezerra.dslist.projections.GameMinProjection;
 
 public class GameMinDTO {
 
@@ -20,6 +21,14 @@ public class GameMinDTO {
         year = entity.getYear();
         imgUrl = entity.getImgUrl();
         shortDescription = entity.getLongDescription();
+    }
+
+    public GameMinDTO(GameMinProjection projection) {
+        id = projection.getId();
+        title = projection.getTitle();
+        year = projection.getYear();
+        imgUrl = projection.getImgUrl();
+        shortDescription = projection.getLongDescription();
     }
 
     public Long getId() {

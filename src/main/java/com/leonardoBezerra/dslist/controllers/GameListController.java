@@ -2,7 +2,6 @@ package com.leonardoBezerra.dslist.controllers;
 
 import com.leonardoBezerra.dslist.Services.GameListService;
 import com.leonardoBezerra.dslist.Services.GameService;
-import com.leonardoBezerra.dslist.dto.GameDTO;
 import com.leonardoBezerra.dslist.dto.GameListDTO;
 import com.leonardoBezerra.dslist.dto.GameMinDTO;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,9 +19,18 @@ public class GameListController {
     @Autowired
     private GameListService gameListService;
 
+    @Autowired
+    private GameService gameService;
+
     @GetMapping
     public List<GameListDTO> findAll() {
         List<GameListDTO> result = gameListService.findAll();
+        return result;
+    }
+
+    @GetMapping(value = "/{listId}/games")
+    public List<GameMinDTO> findByList(@PathVariable Long listId) {
+        List<GameMinDTO> result = gameService.findByList(listId);
         return result;
     }
 }
