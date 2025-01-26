@@ -15,22 +15,20 @@ public class Belonging {
 
     private Integer position;
 
-    public Belonging(){
-
-    }
-
-    public Belonging(Game game, GameList list, Integer position) {
+    public void setGame(Game game) {
         id.setGame(game);
+    }
+
+    public Game getGame() {
+        return id.getGame();
+    }
+
+    public void setList(GameList list) {
         id.setList(list);
-        this.position = position;
     }
 
-    public BelongingPK getId() {
-        return id;
-    }
-
-    public void setId(BelongingPK id) {
-        this.id = id;
+    public GameList getList() {
+        return id.getList();
     }
 
     public Integer getPosition() {

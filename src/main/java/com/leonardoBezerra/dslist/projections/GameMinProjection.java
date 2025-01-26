@@ -9,5 +9,4 @@ public interface GameMinProjection {
     String getShortDescription();
     Integer getPosition();
 
-    String getLongDescription();
 }

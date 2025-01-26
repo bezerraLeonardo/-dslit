@@ -12,15 +12,12 @@ public class GameMinDTO {
     private String imgUrl;
     private String shortDescription;
 
-    public GameMinDTO() {
-    }
-
     public GameMinDTO(Game entity) {
         id = entity.getId();
         title = entity.getTitle();
         year = entity.getYear();
         imgUrl = entity.getImgUrl();
-        shortDescription = entity.getLongDescription();
+        shortDescription = entity.getShortDescription();
     }
 
     public GameMinDTO(GameMinProjection projection) {
@@ -28,7 +25,7 @@ public class GameMinDTO {
         title = projection.getTitle();
         year = projection.getGameYear();
         imgUrl = projection.getImgUrl();
-        shortDescription = projection.getLongDescription();
+        shortDescription = projection.getShortDescription();
     }
 
     public Long getId() {
